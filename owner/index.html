@@ -1,0 +1,500 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <!--=============== basic  ===============-->
+    <meta charset="UTF-8">
+    <title>ConstructZon</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <!--=============== css  ===============-->
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/plugins.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/color.css">
+    <!--=============== favicons ===============-->
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <!--loader-->
+    <div class="loader-wrap">
+        <div class="pin"></div>
+        <div class="pulse"></div>
+    </div>
+    <!--loader end-->
+    <!-- Main  -->
+    <div id="main">
+        <!-- header-->
+        <header class="main-header dark-header fs-header sticky">
+            <div class="header-inner">
+                <div class="logo-holder">
+                    <a href="index.html"><img src="images/logo.png" alt=""></a>
+                </div>
+                <div class="header-search vis-header-search">
+                    <div class="header-search-input-item">
+                        <input type="text" placeholder="Keywords" value="" />
+                    </div>
+                    <div class="header-search-select-item">
+                            <select data-placeholder="All Categories" class="chosen-select">
+                                    <option>Pumbling</option>
+                                    <option>Roofing</option>
+                                    <option>Electrical</option>
+                                    <option>Heating/AC</option>
+                                    <option>Carpenter</option>
+                                    <option>Plumber</option>
+                                    <option>House cleaning</option>
+                                </select>
+                    </div>
+                    <button class="header-search-button" onclick="window.location.href='listing.html'">Search</button>
+                </div>
+                <div class="show-search-button"><i class="fa fa-search"></i> <span>Search</span></div>
+                <a href="dashboard-add-listing.html" class="add-list">Add Listing <span><i
+                            class="fa fa-plus"></i></span></a>
+                <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In</div>
+
+                <!-- nav-button-wrap-->
+                <div class="nav-button-wrap color-bg">
+                    <div class="nav-button">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+                <!-- nav-button-wrap end-->
+                <!--  navigation -->
+                <div class="nav-holder main-menu">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html" class="act-link">Home</a> </li>
+                            <li><a href="searched.html">Listings</a></li>
+                            <li><a href="listing-single2.html">Single Listing</a></li>
+                            <li>
+                                <a href="#">Pages <i class="fa fa-caret-down"></i></a>
+                                <!--second level -->
+                                <ul>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="contacts.html">Contacts</a></li>
+                                    <li><a href="author-single.html">User single</a></li>
+                                    <li><a href="how-itworks.html">How it Works</a></li>
+                                    <li><a href="dashboard-myprofile.html">User Dasboard</a></li>
+                                    <li><a href="blog-single.html">Blog Single</a></li>
+                                    <li><a href="dashboard-add-listing.html">Add Listing</a></li>
+                                    <li><a href="404.html">404</a></li>
+                                </ul>
+                                <!--second level end-->
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- navigation  end -->
+            </div>
+        </header>
+        <!--  header end -->
+        <!--  wrapper  -->
+        <div id="wrapper">
+            <!-- Content-->
+            <div class="content">
+                <!--section header -->
+                <section class="scroll-con-sec hero-section" data-scrollax-parent="true" id="sec1">
+                    <div class="bg" data-bg="images/bg/1.jpg" data-scrollax="properties: { translateY: '200px' }"></div>
+                    <div class="overlay"></div>
+                    <div class="hero-section-wrap fl-wrap">
+                        <div class="container">
+                            <div class="intro-item fl-wrap">
+                                <h2>Find a handyman in your area</h2>
+                                <h3>New Project System to protect you</h3>
+                            </div>
+
+                            <form onsubmit="return ContractorProfileSearch()" method="GET" name="submitForm" class="main-search-input-wrap">
+                                <div class="main-search-input fl-wrap">
+                                    <div class="main-search-input-item">
+                                        <input id="title_input" type="text" placeholder="What are you looking for?" value="" />
+                                    </div>
+
+                                    <div class="main-search-input-item location"  id="autocolete-container"> 
+                                        <input id="zipcode_input" type="number" name="zipcode" placeholder="Zip Code" id="autocmplete-input"  value="" />
+                                        <a href="#"><i class="fa fa-dot-circle-o"></i></a>
+                                    </div>
+
+                                    <div class="main-search-input-item">
+                                        <select data-placeholder="All Categories" id="domain_input" class="chosen-select"  >
+                                            <option>All Categories</option>
+                                            <option>plumber</option>
+                                            <option>Roofing</option>
+                                            <option>Electrical</option>
+                                            <option>Heating/AC</option>
+                                            <option>Carpenter</option>
+                                            <option>Plumber</option>
+                                            <option>House cleaning</option>
+                                        </select>
+                                    </div>
+                                    <button class="main-search-button" type="submit" >Search</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <script type="text/javascript">
+
+                        // function ContractorProfileSearch() {
+                        //     var title = document.getElementById("title_input");
+                        //     var zipcode = document.getElementById("zipcode_input");
+                        //     var domain = document.getElementById("domain_input");
+                        //     // str.(0);
+                        //     console.log(title.value)
+                        //     var searchInfo = {
+                        //         title: title.value,
+                        //         zipcode: zipcode.value.match(/^\d\d\d/) + '%', 
+                        //         domain: domain.value 
+                        //     };
+
+                        //     axios({
+                        //         method: "POST",
+                        //         "url": "http://localhost:3000",
+                        //         "data": searchInfo,
+                        //         "headers": {
+                        //             "content-type": "application/json"
+                        //         }
+                        //         // server response 
+                        //     }).then(function (response) {
+                        //         console.log(response.data);
+                        
+                        //         return false;
+
+                    
+                        //     }); 
+                        //     return false;
+
+                        // };
+                        
+                        
+                        </script>
+                    <div class="bubble-bg"> </div>
+                    <div class="header-sec-link">
+                        <div class="container"><a href="#sec2" class="custom-scroll-link">Let's Start</a></div>
+                    </div>
+                </section>
+                <!-- header end -->
+
+                <!--How it works  -->
+                <section>
+                    <div class="container">
+                        <div class="section-title">
+                            <h2>How it works</h2>
+                            <div class="section-subtitle">Discover & Connect </div>
+                            <span class="section-separator"></span>
+                            <p>Building the best </p>
+                        </div>
+                        <!--process-wrap  -->
+                        <div class="process-wrap fl-wrap">
+                            <ul>
+                                <li>
+                                    <div class="process-item">
+                                        <span class="process-count">01 . </span>
+                                        <div class="time-line-icon"><i class="fa fa-map-o"></i></div>
+                                        <h4>Post a Project</h4>
+                                        <p>First sign up to post a job. You can then contact a handyman
+                                            and they can contact you! </p>
+                                    </div>
+                                    <span class="pr-dec"></span>
+                                </li>
+                                <li>
+                                    <div class="process-item">
+                                        <span class="process-count">02 .</span>
+                                        <div class="time-line-icon"><i class="fa fa-envelope-open-o"></i></div>
+                                        <h4>Contact a handyman</h4>
+                                        <p>Faucibus ante, in porttitor tellus blandit et. Phasellus tincidunt metus
+                                            lectus sollicitudin feugiat pharetra consectetur.</p>
+                                    </div>
+                                    <span class="pr-dec"></span>
+                                </li>
+                                <li>
+                                    <div class="process-item">
+                                        <span class="process-count">03 .</span>
+                                        <div class="time-line-icon"><i class="fa fa-hand-peace-o"></i></div>
+                                        <h4>Complete Project</h4>
+                                        <p>Maecenas pulvinar, risus in facilisis dignissim, quam nisi hendrerit nulla,
+                                            id vestibulum metus nullam viverra porta.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--process-wrap   end-->
+                    </div>
+                </section>
+                <!--How it works  end -->
+
+                <!--section -->
+                <section class="color-bg">
+                    <div class="shapes-bg-big"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="images-collage fl-wrap">
+                                    <div class="images-collage-title">City<span>Book</span></div>
+                                    <div class="images-collage-main images-collage-item"><img src="images/avatar/1.jpg"
+                                            alt=""></div>
+                                    <div class="images-collage-other images-collage-item" data-position-left="23"
+                                        data-position-top="10" data-zindex="2"><img src="images/avatar/1.jpg" alt="">
+                                    </div>
+                                    <div class="images-collage-other images-collage-item" data-position-left="62"
+                                        data-position-top="54" data-zindex="5"><img src="images/avatar/1.jpg" alt="">
+                                    </div>
+                                    <div class="images-collage-other images-collage-item anim-col"
+                                        data-position-left="18" data-position-top="70" data-zindex="11"><img
+                                            src="images/avatar/1.jpg" alt=""></div>
+                                    <div class="images-collage-other images-collage-item" data-position-left="37"
+                                        data-position-top="90" data-zindex="1"><img src="images/avatar/1.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="color-bg-text">
+                                    <h3>Become A Handyman!</h3>
+                                    <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis
+                                        cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit
+                                        amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut
+                                        laoreet dolore magna aliquam erat.</p>
+                                    <a href="#" class="color-bg-link modal-open">Sign In Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- section end -->
+
+
+
+                <!--section -->
+                <section class="gradient-bg">
+                    <div class="cirle-bg">
+                        <div class="bg" data-bg="images/bg/circle.png"></div>
+                    </div>
+                    <div class="container">
+                        <div class="join-wrap fl-wrap">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h3>Do You Have Questions ?</h3>
+                                    <p>Lorem ipsum dolor sit amet, harum dolor nec in, usu molestiae at no.</p>
+                                </div>
+                                <div class="col-md-4"><a href="contacts.html" class="join-wrap-btn">Get In Touch <i
+                                            class="fa fa-envelope-o"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- section end -->
+            </div>
+            <!-- Content end -->
+        </div>
+        <!-- wrapper end -->
+        <!--footer -->
+        <footer class="main-footer dark-footer  ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="footer-widget fl-wrap">
+                            <h3>About Us</h3>
+                            <div class="footer-contacts-widget fl-wrap">
+                                <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus.
+                                    Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet,
+                                    consectetuer adipiscing elit, sed diam. </p>
+                                <ul class="footer-contacts fl-wrap">
+                                    <li><span><i class="fa fa-envelope-o"></i> Mail :</span><a href="#"
+                                            target="_blank">yourmail@domain.com</a></li>
+                                    <li> <span><i class="fa fa-map-marker"></i> Adress :</span><a href="#"
+                                            target="_blank">USA 27TH Brooklyn NY</a></li>
+                                    <li><span><i class="fa fa-phone"></i> Phone :</span><a href="#">+7(111)123456789</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="footer-widget fl-wrap">
+                            <h3>Our Last News</h3>
+                            <div class="widget-posts fl-wrap">
+                                <ul>
+                                    <li class="clearfix">
+                                        <a href="#" class="widget-posts-img"><img src="images/all/1.jpg" class="respimg"
+                                                alt=""></a>
+                                        <div class="widget-posts-descr">
+                                            <a href="#" title="">Vivamus dapibus rutrum</a>
+                                            <span class="widget-posts-date"> 21 Mar 09.05 </span>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <a href="#" class="widget-posts-img"><img src="images/all/1.jpg" class="respimg"
+                                                alt=""></a>
+                                        <div class="widget-posts-descr">
+                                            <a href="#" title=""> In hac habitasse platea</a>
+                                            <span class="widget-posts-date"> 7 Mar 18.21 </span>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <a href="#" class="widget-posts-img"><img src="images/all/1.jpg" class="respimg"
+                                                alt=""></a>
+                                        <div class="widget-posts-descr">
+                                            <a href="#" title="">Tortor tempor in porta</a>
+                                            <span class="widget-posts-date"> 7 Mar 16.42 </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="footer-widget fl-wrap">
+                            <h3>Our Twitter</h3>
+                            <div id="footer-twiit"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="footer-widget fl-wrap">
+                            <h3>Subscribe</h3>
+                            <div class="subscribe-widget fl-wrap">
+                                <p>Want to be notified when we launch a new template or an udpate. Just sign up and
+                                    we'll send you a notification by email.</p>
+                                <div class="subcribe-form">
+                                    <form id="subscribe">
+                                        <input class="enteremail" name="email" id="subscribe-email" placeholder="Email"
+                                            spellcheck="false" type="text">
+                                        <button type="submit" id="subscribe-button" class="subscribe-button"><i
+                                                class="fa fa-rss"></i> Subscribe</button>
+                                        <label for="subscribe-email" class="subscribe-message"></label>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="footer-widget fl-wrap">
+                                <div class="footer-menu fl-wrap">
+                                    <ul>
+                                        <li><a href="#">Home </a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Listing</a></li>
+                                        <li><a href="#">Contacts</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-footer fl-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="about-widget">
+                                <img src="images/logo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="copyright"> &#169; CityBook 2018 . All rights reserved.</div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer-social">
+                                <ul>
+                                    <li><a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fa fa-chrome"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fa fa-vk"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--footer end  -->
+        <!--register form -->
+        <div class="main-register-wrap modal">
+                <div class="main-overlay"></div>
+                <div class="main-register-holder">
+                    <div class="main-register fl-wrap">
+                        <div class="close-reg"><i class="fa fa-times"></i></div>
+                        <h3>Sign In <span>City<strong>Book</strong></span></h3>
+                        <div id="tabs-container">
+                            <ul class="tabs-menu">
+                                <li class="current"><a href="#tab-1">Login</a></li>
+                                <li><a href="#tab-2">Register</a></li>
+                            </ul>
+                            <div class="tab">
+                                    <div id="tab-1" class="tab-content">
+                                        <div class="custom-form">
+
+                                            <form onsubmit="return validateAuth()" method="post" name="authenticationform">
+                                                <label>Email Address</label>
+                                                <input name="email1" id="email1" type="text" value="">
+                                                <label id ="AinvalidEmail" style="color:red; visibility:hidden">Email Doesnt Exists</label>
+        
+                                                <label>Password</label>
+                                                <input name="password1" id="password1" type="password" value="">
+                                                <label id ="AinvalidPassword" style="color:red; visibility:hidden">Sorry password incorrect</label>
+        
+                                                <button type="submit" class="log-submit-btn"><span>Log In</span></button> 
+                                                <div class="clearfix"></div>
+                                            </form>
+        
+                                        </div>
+                                    </div>
+    
+                                <div class="tab">
+                                        <div id="tab-2" class="tab-content">
+                                            <div class="custom-form">
+                                                <form onsubmit="return validateRegister()" method="post" name="registerform"
+                                                    class="main-register-form" id="main-register-form2">
+        
+                                                    <label>First Name</label>
+                                                    <input name="name" id="firstname" type="text" value="">
+                                                    <label id="invalidFirstname" style="color:red; visibility:hidden">What is
+                                                        your Firstname</label>
+        
+                                                    <label>Last Name</label>
+                                                    <input name="lastname" id="lastname" type="text" value="">
+                                                    <label id="invalidLastname" style="color:red; visibility:hidden">What is
+                                                        your Lastname</label>
+        
+                                                    <label>Email Address</label>
+                                                    <input name="email" id="email2" type="email" value="">
+        
+                                                    <label id="invalidEmail2"
+                                                        style="color:red; visibility:hidden">InvalidEmail</label>
+                                                    <label id="emailExist" style="color:red; visibility:hidden">Email Already
+                                                        Exists</label>
+        
+                                                    <label>Password</label>
+                                                    <input name="password" id="password2" type="password" value="">
+                                                    <label id="invalidPassword2" style="color:red; visibility:hidden">Invalid
+                                                        Password</label>
+        
+        
+                                                        <button type="submit" class="log-submit-btn"><span>Register</span></button>
+                                                    </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                          
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--register form end -->
+        <a class="to-top"><i class="fa fa-angle-up"></i></a>
+    </div>
+    <!-- Main end -->
+    <!--=============== scripts  ===============-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwJSRi0zFjDemECmFl9JtRj1FY7TiTRRo&libraries=places&callback=initAutocomplete">
+    </script>
+</body>
+
+</html>

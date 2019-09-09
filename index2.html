@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>A Simple Page</title>
+<script language="JavaScript">
+function tagInfo(){
+    var tag;
+    tag = "Element name: " + window.event.srcElement.tagName + " ID: " + window.event.srcElement.id;
+    document.write(tag);
+    console.log(tag )
+}
+
+</script>
+</head>
+<body onMouseover="tagInfo()" id="body1">
+<h1 id="head1">Heading One</h1>
+<p id="para1">Some text</p>
+<h2 id="head2">Another heading</h2>
+<p id="para2">More text and some <b id="bold1">bold</b> text</p>
+<h3 id="head3">Another heading</h3>
+<p id="para3">More text and some <i id="italics1">italics</i> text</p>
+</body>
+</html>

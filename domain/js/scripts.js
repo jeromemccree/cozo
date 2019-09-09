@@ -860,7 +860,7 @@ $(function () {
 
 var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 // authentication 
-function validateAuth() {
+function OwnerAuthPOST() {
 
     var email = document.getElementById("email1");
     var password = document.getElementById("password1");
@@ -883,12 +883,53 @@ function validateAuth() {
         return false;
     }
 
-    return false;
+    axios({
+        method: "POST",
+        "url": "http://localhost:3000",
+        "data": userInfo,
+        "headers": {
+            "content-type": "application/json"
+        }
 
+        // server response 
+    }).then(function (response) {
+        // info was not submitted error
+        if (response.data == "Sorry please enter info") {
+            return false;
+
+            // email doesnt exits error
+        } else if (response.data == "Email doesnt exist") {
+            email.style.border = "solid 1px red";
+            document.getElementById("AinvalidEmail").style.visibility = "visible";
+
+            password.style.border = "";
+            document.getElementById("AinvalidPassword").style.visibility = "hidden";
+            return false;
+
+        } else if (response.data == "Password is incorrect") {
+            password.style.border = "solid 1px red";
+            document.getElementById("AinvalidPassword").style.visibility = "visible";
+
+            email.style.border = "";
+            document.getElementById("AinvalidEmail").style.visibility = "hidden";
+            return false;
+
+            // jwt storing 
+        } else {
+            alert(response.data)
+            document.cookie = "value =" + response.data;
+
+            return true;
+
+        }
+    });
+
+    return true;
 }
 
 // registration 
-function validateRegister() {
+function OwnerRegisterPOST() {
+    // document.cookie = "cookiename=cookievalue; expires= Thu, 21 Aug 2014 20:00:00 UTC";
 
     var firstname = document.getElementById("firstname");
     var lastname = document.getElementById("lastname");
@@ -908,19 +949,19 @@ function validateRegister() {
         document.getElementById("invalidFirstname").style.visibility = "visible";
         return false;
 
-    // lastname error check
+        // lastname error check
     } else if (lastname.value.trim() == "" || lastname.value.trim().length < 2 || lastname.value.trim().length > 25) {
         lastname.style.border = "solid 1px red";
         document.getElementById("invalidLastname").style.visibility = "visible";
         return false;
 
-    // email error check
+        // email error check
     } else if (email.value.trim() == "" || !email.value.match(emailformat) || email.value.trim().length > 75) {
         email.style.border = "solid 1px red";
         document.getElementById("invalidEmail2").style.visibility = "visible";
         return false;
 
-    // password error check
+        // password error check
     } else if (password.value.trim() == "" || password.value.trim().length < 5 || password.value.trim().length > 12) {
         password.style.border = "solid 1px red";
         document.getElementById("invalidPassword2").style.visibility = "visible";
@@ -935,27 +976,25 @@ function validateRegister() {
         "headers": {
             "content-type": "application/json"
         }
+
         // server response 
     }).then(function (response) {
-        console.log(response.data)
-
 
         // info was not submitted error
         if (response.data == "Sorry please enter info") {
             return false;
 
-        // email already exits error
+            // email already exits error
         } else if (response.data == "EmailExists") {
             email.style.border = "solid 1px red";
             document.getElementById("emailExist").style.visibility = "visible";
+
             return false;
 
-        // jwt storing 
+            // jwt storing 
         } else {
-            // var newCookie = JSON.stringify(response.data);
-            document.cookie ="newCookie;"
-            // console.log('SUCCESS!!!!' + newCookie);
-            return false;
+            document.cookie = "name=ContractorJwt; path=/; value=" + response.data; 
+            return true;
 
         }
     });
@@ -963,3 +1002,49 @@ function validateRegister() {
     return false;
 
 }
+
+function ContractorProfileSearch() {
+    var title = document.getElementById("title_input");
+    var zipcode = document.getElementById("zipcode_input");
+    var domain = document.getElementById("domain_input");
+
+    var searchInfo = {
+        title: '%' + title.value + '%',
+        zipcode: zipcode.value.match(/^\d\d\d/) + '%',
+        domain: domain.value
+    };
+
+    axios({
+        method: "POST",
+        "url": "http://localhost:3000",
+        "data": searchInfo,
+        "headers": {
+            "content-type": "application/json"
+        }
+        // server response 
+    }).then(function (results) {
+        var contractor = results.data.ContractorProfile;
+
+        sessionStorage.removeItem("contractorProfileResults");
+
+        sessionStorage.setItem("contractorProfileResults", JSON.stringify(contractor));
+
+        var nextWindow = window.location.href = "searched.html";
+
+        setTimeout(nextWindow, 1000);
+
+        return false;
+    });
+
+
+    return false;
+
+
+
+
+
+};
+
+
+
+

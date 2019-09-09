@@ -110,8 +110,7 @@
                                     <div class="user-profile-avatar"><img src="images/avatar/1.jpg" alt=""></div>
 
                                     <div class="list-single-header-cat fl-wrap">
-                                        <a href="#">Restourant</a>
-                                        <span> Now Opening <i class="fa fa-check"></i></span>
+                                        <a class="listing-domain" ></a>
                                     </div>
                                 </div>
                                 <h2>Luxury Restourant <span> - Hosted By </span><a href="author-single.html">Alisa
@@ -120,13 +119,12 @@
                                 <div class="listing-rating card-popup-rainingvis" data-starrating2="5">
                                     <span>(11 reviews)</span>
                                 </div>
-                                <div class="list-post-counter single-list-post-counter"><span>4</span><i
-                                        class="fa fa-heart"></i></div>
+                                
                                 <div class="clearfix"></div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="list-single-header-contacts fl-wrap">
-                                            
+
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -136,9 +134,7 @@
                                                 </div>
                                                 <div class="share-container  isShare"></div>
                                             </div>
-                                            <span class="viewed-counter"><i class="fa fa-eye"></i> Viewed - 156 </span>
-                                            <a class="custom-scroll-link" href="#sec5"><i
-                                                    class="fa fa-hand-o-right"></i>Add Review </a>
+                                          
                                         </div>
                                     </div>
                                 </div>
@@ -172,20 +168,9 @@
                                 <div class="list-single-main-wrapper fl-wrap" id="sec2">
                                     <div class="list-single-main-item fl-wrap">
                                         <div class="list-single-main-item-title fl-wrap">
-                                            <h3>About <span> Alisa Noory</span></h3>
+                                            <h3>About <span class="listing-firstname"> </span></h3>
                                         </div>
-                                        <p>Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget
-                                            iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales
-                                            eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit finibus
-                                            tellus, ut tristique elit risus at metus.</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar
-                                            neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla
-                                            posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam
-                                            erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor
-                                            iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat
-                                            purus viverra.</p>
-                                        <a href="#" class="btn transparent-btn float-btn">Download menu <i
-                                                class="fa fa-file-pdf-o"></i></a>
+                                        <p class="listing-bio"></p>
                                         <span class="fw-separator"></span>
                                     </div>
 
@@ -803,50 +788,7 @@
         <!--register form end -->
         <a class="to-top"><i class="fa fa-angle-up"></i></a>
         <!--chat-widget -->
-        <div class="chat-widget-button"><i class="fa fa-comments-o"></i><span>Chat With Owner</span></div>
-        <div class="chat-widget_wrap not-vis-chat">
-            <div class="chat-widget_header color-bg">
-                <h3>Chat with <a href="author-single.html"> Alisa Noory</a></h3>
-                <div class="status st_online"><span></span>Online</div>
-            </div>
-            <div class="chat-body">
-                <!-- message-->
-                <div class="chat-message chat-message_guest fl-wrap">
-                    <div class="dashboard-message-avatar">
-                        <img src="images/avatar/1.jpg" alt="">
-                    </div>
-                    <span class="chat-message-user-name">Jessie</span>
-                    <span class="massage-date">25 may 2018 <span>7.51 PM</span></span>
-                    <p>Vivamus lobortis vel nibh nec maximus. Donec dolor erat, rutrum ut feugiat sed, ornare vitae
-                        nunc. </p>
-                </div>
-                <!-- message end-->
-                <!-- message-->
-                <div class="chat-message chat-message_user fl-wrap">
-                    <div class="dashboard-message-avatar">
-                        <img src="images/avatar/1.jpg" alt="">
-                    </div>
-                    <span class="chat-message-user-name">Alica</span>
-                    <span class="massage-date">25 may 2018 <span>7.51 PM</span></span>
-                    <p>Nulla eget erat consequat quam feugiat dapibus eget sed mauris.</p>
-                </div>
-                <!-- message end-->
-                <!-- message-->
-                <div class="chat-message chat-message_guest fl-wrap">
-                    <div class="dashboard-message-avatar">
-                        <img src="images/avatar/1.jpg" alt="">
-                    </div>
-                    <span class="chat-message-user-name">Jessie</span>
-                    <span class="massage-date">25 may 2018 <span>7.51 PM</span></span>
-                    <p>Sed non neque faucibus, condimentum lectus at, accumsan enim. Fusce pretium egestas cursus..</p>
-                </div>
-                <!-- message end-->
-            </div>
-            <div class="chat-widget_input fl-wrap">
-                <textarea placeholder="Type Message"></textarea>
-                <button type="submit"><i class="fa fa-paper-plane-o"></i></button>
-            </div>
-        </div>
+      
         <!--chat-widget end -->
     </div>
     <!-- Main end -->
@@ -862,3 +804,47 @@
 </body>
 
 </html>
+<script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            var sessionStorageData = sessionStorage.getItem("contractorProfilePage");
+            var contractor = JSON.parse(sessionStorageData);
+               console.log(contractor.Bio);
+                document.getElementsByClassName("listing-firstname")[0].innerHTML = contractor.Firstname;
+                // document.getElementsByClassName("listing-title")[0].innerHTML = contractor.Title;
+                document.getElementsByClassName("listing-bio")[0].innerHTML = contractor.Bio;
+                // document.getElementsByClassName("listing-city")[0].innerHTML = contractor.City;
+                document.getElementsByClassName("listing-domain")[0].innerHTML = contractor.Domain;
+                // document.getElementsByClassName("listing-profilepic")[0].innerHTML = contractor.Photo;
+    
+                if (contractor.TwitterHandle != null ){
+
+                    
+
+                }
+    
+           
+    
+        });
+    
+        function ContractorProfileSelect() {
+            
+            var listingID = window.event.path[4].id;
+    
+            var sessionStorageData = sessionStorage.getItem("contractorProfileResults");
+    
+            var contractor = JSON.parse(sessionStorageData);
+    
+            var contractorData = contractor[listingID];
+    
+            sessionStorage.removeItem("contractorProfilePage");
+    
+            sessionStorage.setItem("contractorProfilePage", JSON.stringify(contractorData));
+    
+            var nextWindow = window.location.href = "listing-single2.html";
+    
+            setTimeout(nextWindow, 1000);
+    
+        }
+    
+    
+    </script>

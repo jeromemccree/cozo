@@ -1631,6 +1631,7 @@ section.gray-section .section-separator {
 .card-btn:hover {
 	color:#fff;
 }
+
 .listing-item-grid {
 	float:left;
 	width:100%;
@@ -2044,6 +2045,10 @@ section.gray-section .section-separator {
 	width:50%;
 	padding:0 8px;
 	margin-bottom:12px;
+	outline:none;
+	background-color: Transparent;
+    border: none;
+    outline:none;
 }
 .list-carousel {
 	padding:0 30px;
@@ -3314,7 +3319,7 @@ article .list-single-main-item {
 	color: #666;
 	font-weight:500;
 	font-size:13px;
-	font-family: 'Quicksand', sans-serif;
+	font-family: 'roboto';
 }
 .custom-form  input:-moz-placeholder , .custom-form  textarea:-moz-placeholder  {
 	color: #888DA0;
@@ -6927,4 +6932,8 @@ header.main-header {
 	-webkit-background-size:cover;
 	background-position:center;
 }
+}
+.submit-button{
+float: right;
+margin-top: 30px;
 }

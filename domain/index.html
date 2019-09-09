@@ -39,15 +39,15 @@
                         <input type="text" placeholder="Keywords" value="" />
                     </div>
                     <div class="header-search-select-item">
-                        <select data-placeholder="All Categories" class="chosen-select">
-                            <option>Pumbling</option>
-                            <option>Roofing</option>
-                            <option>Electrical</option>
-                            <option>Heating/AC</option>
-                            <option>Carpenter</option>
-                            <option>Plumber</option>
-                            <option>House cleaning</option>
-                        </select>
+                            <select data-placeholder="All Categories" class="chosen-select">
+                                    <option>Pumbling</option>
+                                    <option>Roofing</option>
+                                    <option>Electrical</option>
+                                    <option>Heating/AC</option>
+                                    <option>Carpenter</option>
+                                    <option>Plumber</option>
+                                    <option>House cleaning</option>
+                                </select>
                     </div>
                     <button class="header-search-button" onclick="window.location.href='listing.html'">Search</button>
                 </div>
@@ -63,32 +63,7 @@
                     </div>
                 </div>
                 <!-- nav-button-wrap end-->
-                <!--  navigation -->
-                <div class="nav-holder main-menu">
-                    <nav>
-                        <ul>
-                            <li><a href="index.html" class="act-link">Home</a> </li>
-                            <li><a href="searched.html">Listings</a></li>
-                            <li><a href="listing-single2.html">Single Listing</a></li>
-                            <li>
-                                <a href="#">Pages <i class="fa fa-caret-down"></i></a>
-                                <!--second level -->
-                                <ul>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="contacts.html">Contacts</a></li>
-                                    <li><a href="author-single.html">User single</a></li>
-                                    <li><a href="how-itworks.html">How it Works</a></li>
-                                    <li><a href="dashboard-myprofile.html">User Dasboard</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                    <li><a href="dashboard-add-listing.html">Add Listing</a></li>
-                                    <li><a href="404.html">404</a></li>
-                                </ul>
-                                <!--second level end-->
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- navigation  end -->
+            
             </div>
         </header>
         <!--  header end -->
@@ -106,19 +81,26 @@
                                 <h2>Find a handyman in your area</h2>
                                 <h3>New Project System to protect you</h3>
                             </div>
-                            <div class="main-search-input-wrap">
+
+                            <form onsubmit="return ContractorProfileSearch()" method="POST" name="submitForm"
+                                class="main-search-input-wrap" action="searched.html">
                                 <div class="main-search-input fl-wrap">
                                     <div class="main-search-input-item">
-                                        <input type="text" placeholder="What are you looking for?" value="" />
+                                        <input id="title_input" type="text" placeholder="What are you looking for?"
+                                            value="" />
                                     </div>
-                                    <div class="main-search-input-item location" id="autocomplete-container">
-                                        <input type="text" placeholder="Location" id="autocomplete-input" value="" />
+
+                                    <div class="main-search-input-item location" id="autocolete-container">
+                                        <input id="zipcode_input" type="number" name="zipcode" placeholder="Zip Code"
+                                            id="autocmplete-input" value="" />
                                         <a href="#"><i class="fa fa-dot-circle-o"></i></a>
                                     </div>
+
                                     <div class="main-search-input-item">
-                                        <select data-placeholder="All Categories" class="chosen-select">
+                                        <select data-placeholder="All Categories" id="domain_input"
+                                            class="chosen-select">
                                             <option>All Categories</option>
-                                            <option>Pumbling</option>
+                                            <option>plumber</option>
                                             <option>Roofing</option>
                                             <option>Electrical</option>
                                             <option>Heating/AC</option>
@@ -127,12 +109,13 @@
                                             <option>House cleaning</option>
                                         </select>
                                     </div>
-                                    <button class="main-search-button"
-                                        onclick="window.location.href='/listing-single4.html'">Search</button>
+                                    <button class="main-search-button" type="submit">Search</button>
                                 </div>
-                            </div>
+                            </form>
                         </div>
+
                     </div>
+                  
                     <div class="bubble-bg"> </div>
                     <div class="header-sec-link">
                         <div class="container"><a href="#sec2" class="custom-scroll-link">Let's Start</a></div>
@@ -149,6 +132,7 @@
                             <span class="section-separator"></span>
                             <p>Building the best </p>
                         </div>
+                        
                         <!--process-wrap  -->
                         <div class="process-wrap fl-wrap">
                             <ul>
@@ -157,7 +141,7 @@
                                         <span class="process-count">01 . </span>
                                         <div class="time-line-icon"><i class="fa fa-map-o"></i></div>
                                         <h4>Post a Project</h4>
-                                        <p>First sign up to post a job. Once you post a job a, you can contact handymen
+                                        <p>First sign up to post a job. You can then contact a handyman
                                             and they can contact you! </p>
                                     </div>
                                     <span class="pr-dec"></span>
@@ -253,7 +237,7 @@
         </div>
         <!-- wrapper end -->
         <!--footer -->
-        <footer class="main-footer dark-footer  ">
+        <footer class="main-footer dark-footer">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
@@ -374,75 +358,80 @@
         <div class="main-register-wrap modal">
             <div class="main-overlay"></div>
             <div class="main-register-holder">
-                <div class="main-register fl-wrap">
-                    <div class="close-reg"><i class="fa fa-times"></i></div>
-                    <h3>Sign In <span>City<strong>Book</strong></span></h3>
-                    <div id="tabs-container">
-                        <ul class="tabs-menu">
-                            <li class="current"><a href="#tab-1">Login</a></li>
-                            <li><a href="#tab-2">Register</a></li>
-                        </ul>
-                        <div class="tab">
-                            <div id="tab-1" class="tab-content">
-                                <div class="custom-form">
-                                    <form onsubmit="return validateAuth()" method="post" name="registerform"
-                                        action="searched.html">
-                                        <label>Email Address</label>
-                                        <input name="email" id="Aemail" type="text" value="">
-                                        <!-- <label id ="AinvalidEmail" style="color:red; visibility:hidden">Invalid Email</label> -->
-
-                                        <label>Password</label>
-                                        <input name="password" id="Apassword" type="password" value="">
-                                        <!-- <label id ="AinvalidPassword" style="color:red; visibility:hidden">Invalid Pasword</label> -->
-
-                                        <!-- <button type="submit" class="log-submit-btn"><span>Log In</span></button> -->
-                                        <div class="clearfix"></div>
-                                    </form>
-
-                                </div>
-                            </div>
-
+                    <div class="main-register fl-wrap">
+                        <div class="close-reg"><i class="fa fa-times"></i></div>
+                        <h3>Sign In <span>City<strong>Book</strong></span></h3>
+                        <div id="tabs-container">
+                            <ul class="tabs-menu">
+                                <li class="current"><a href="#tab-1">Login</a></li>
+                                <li><a href="#tab-2">Register</a></li>
+                            </ul>
                             <div class="tab">
-                                <div id="tab-2" class="tab-content">
+                                <div id="tab-1" class="tab-content">
                                     <div class="custom-form">
-                                        <form onsubmit="return validateRegister()" method="post" name="registerform"
-                                            class="main-register-form" id="main-register-form2">
-
-                                            <label>First Name</label>
-                                            <input name="name" id="firstname" type="text" value="">
-                                            <label id="invalidFirstname" style="color:red; visibility:hidden">What is
-                                                your Firstname</label>
-
-                                            <label>Last Name</label>
-                                            <input name="lastname" id="lastname" type="text" value="">
-                                            <label id="invalidLastname" style="color:red; visibility:hidden">What is
-                                                your Lastname</label>
-
+    
+                                        <form onsubmit="return OwnerAuthPOST()" method="post" name="authenticationform"
+                                            action="../owner/index.html">
+    
                                             <label>Email Address</label>
-                                            <input name="email" id="email2" type="email" value="">
-
-                                            <label id="invalidEmail2"
-                                                style="color:red; visibility:hidden">InvalidEmail</label>
-                                            <label id="emailExist" style="color:red; visibility:hidden">Email Already
+                                            <input name="email1" id="email1" type="text" value="">
+                                            <label id="AinvalidEmail" style="color:red; visibility:hidden">Email Doesnt
                                                 Exists</label>
-
+    
                                             <label>Password</label>
-                                            <input name="password" id="password2" type="password" value="">
-                                            <label id="invalidPassword2" style="color:red; visibility:hidden">Invalid
-                                                Password</label>
-
-
-                                            <button type="submit" class="log-submit-btn"><span>Register</span></button>
+                                            <input name="password1" id="password1" type="password" value="">
+                                            <label id="AinvalidPassword" style="color:red; visibility:hidden">Sorry password
+                                                incorrect</label>
+    
+                                            <button type="submit" class="log-submit-btn"><span>Log In</span></button>
+                                            <div class="clearfix"></div>
                                         </form>
+    
                                     </div>
                                 </div>
+    
+                                <div class="tab">
+                                    <div id="tab-2" class="tab-content">
+                                        <div class="custom-form">
+                                            <form onsubmit="return OwnerRegisterPOST()" method="post" name="registerform"
+                                                class="main-register-form" id="main-register-form2"
+                                                action="../owner/index.html">
+    
+                                                <label>First Name</label>
+                                                <input name="name" id="firstname" type="text" value="">
+                                                <label id="invalidFirstname" style="color:red; visibility:hidden">What is
+                                                    your Firstname</label>
+    
+                                                <label>Last Name</label>
+                                                <input name="lastname" id="lastname" type="text" value="">
+                                                <label id="invalidLastname" style="color:red; visibility:hidden">What is
+                                                    your Lastname</label>
+    
+                                                <label>Email Address</label>
+                                                <input name="email" id="email2" type="email" value="">
+    
+                                                <label id="invalidEmail2"
+                                                    style="color:red; visibility:hidden">InvalidEmail</label>
+                                                <label id="emailExist" style="color:red; visibility:hidden">Email Already
+                                                    Exists</label>
+    
+                                                <label>Password</label>
+                                                <input name="password" id="password2" type="password" value="">
+                                                <label id="invalidPassword2" style="color:red; visibility:hidden">Invalid
+                                                    Password</label>
+    
+    
+                                                <button type="submit" class="log-submit-btn"><span>Register</span></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+    
+    
                             </div>
-                      
-
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
         <!--register form end -->
         <a class="to-top"><i class="fa fa-angle-up"></i></a>
