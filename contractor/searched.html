@@ -112,13 +112,7 @@
                                 </div>
                                 <!-- listsearch-input-wrap  -->
                                 <div class="listsearch-input-wrap fl-wrap">
-                                    <div class="listsearch-input-item">
-                                        <i class="mbri-key single-i"></i>
-                                        <input type="text" placeholder="What type of service are you looking for?"
-                                            value="" />
-                                    </div>
-
-                                    <div class="listsearch-input-item">
+                             <div class="listsearch-input-item">
                                         <i class="mbri-key single-i"></i>
                                         <input type="text" placeholder="Zipcode" value="" />
                                     </div>
@@ -133,8 +127,11 @@
                                             <option>House cleaning</option>
                                         </select>
                                     </div>
+                                    <div class="listsearch-input-item">
 
                                     <button class="button fs-map-btn">Update</button>
+                                                                        </div>
+
                                 </div>
                                 <!-- listsearch-input-wrap end -->
                             </div>
@@ -371,16 +368,16 @@
 </html>
 <script>
         window.addEventListener('DOMContentLoaded', (event) => {
-            var sessionStorageData = sessionStorage.getItem("contractorProfileResults");
-            var contractor = JSON.parse(sessionStorageData);
+            var sessionStorageData = sessionStorage.getItem("ownerJobResults");
+            var owner = JSON.parse(sessionStorageData);
 
-            for (i = 0; i < contractor.length; i++) {
+            for (i = 0; i < owner.length; i++) {
                 var listingItem = document.createElement("div");
                 listingItem.setAttribute("id", i);
     
                 listingItem.innerHTML =
 `
-    <button class="listing-item" onclick="ContractorProfileSelect()">
+    <button class="listing-item" onclick="OwnerJobSelect()">
         <article class="geodir-category-listing fl-wrap order-number">
             <div class="geodir-category-img">
                 <img class="listing-background" src="images/all/1.jpg" alt="">
@@ -421,20 +418,19 @@
             }
     
         });
-    
-        function ContractorProfileSelect() {
+        function OwnerJobSelect() {
             
             var listingID = window.event.path[4].id;
     
-            var sessionStorageData = sessionStorage.getItem("contractorProfileResults");
+            var sessionStorageData = sessionStorage.getItem("ownerJobResults");
     
             var contractor = JSON.parse(sessionStorageData);
     
-            var contractorData = contractor[listingID];
+            var ownerData = contractor[listingID];
     
-            sessionStorage.removeItem("contractorProfilePage");
+            sessionStorage.removeItem("ownerJobPage");
     
-            sessionStorage.setItem("contractorProfilePage", JSON.stringify(contractorData));
+            sessionStorage.setItem("ownerJobPage", JSON.stringify(ownerData));
     
             var nextWindow = window.location.href = "listing-single2.html";
     

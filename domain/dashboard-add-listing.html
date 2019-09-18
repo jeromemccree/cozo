@@ -146,187 +146,206 @@
         <div id="wrapper">
             <!--content -->
             <div class="content">
-                <!--section -->
-                <section id="sec1">
-                    <!-- container -->
-                    <div class="container">
-                        <!-- profile-edit-wrap -->
-                        <div class="profile-edit-wrap">
-                            <div class="profile-edit-page-header">
-                                <h2>Add Listing</h2>
+                <form  method="post" name="authenticationform">
+                    <!--section -->
+                    <section id="sec1">
+                        <!-- container -->
+                        <div class="container">
+                            <!-- profile-edit-wrap -->
+                            <div class="profile-edit-wrap">
+                                <div class="profile-edit-page-header">
+                                    <h2>Add Listing</h2>
 
-                            </div>
-                            <div class="row">
-                                <!-- sidebar -->
-                                <div class="col-md-3">
-                                    <div class="fixed-bar fl-wrap">
-                                        <div class="user-profile-menu-wrap fl-wrap">
-                                            <!-- user-profile-menu-->
-                                            <div class="user-profile-menu">
-                                                <h3>Main</h3>
-                                                <ul>
-                                                    <li><a href="dashboard-listing-table.html"><i
-                                                                class="fa fa-th-list"></i> My
-                                                            listigs </a></li>
-                                                    <li><a href="dashboard-add-listing.html" class="user-profile-act"><i
-                                                                class="fa fa-plus-square-o"></i> Add New</a></li>
-                                                    <li><a href="dashboard-messages.html"><i
-                                                                class="fa fa-envelope-o"></i>
-                                                            Messages
-                                                            <span>3</span></a></li>
-                                                </ul>
-                                            </div>
-
-                                            <a href="#" class="log-out-btn">Log Out</a>
-                                        </div>
-                                    </div>
                                 </div>
+                                <div class="row">
 
-                                <div class="col-md-9">
-                                    <div class="profile-edit-container add-list-container">
-                                        <div class="profile-edit-header fl-wrap">
-                                            <h4>Listing </h4>
-                                        </div>
-                                        <div class="custom-form">
 
-                                            <label>Title of thing that need fix<i class="fa fa-briefcase"></i></label>
-                                            <input type="text" placeholder="Example: Replace 300 square foot roof"
-                                                value="" />
+                                    <div class="col-md-12">
+                                        <div class="profile-edit-container add-list-container">
+                                            <div class="profile-edit-header fl-wrap">
+                                                <h4>Listing </h4>
+                                            </div>
+                                            <div class="custom-form">
 
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label>Category</label>
-                                                    <select data-placeholder="All Categories" class="chosen-select">
-                                                        <option>Painting</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label>Keywords <i class="fa fa-key"></i></label>
-                                                    <input type="text"
-                                                        placeholder="Example: Metal Roofing Repair"
-                                                        value="" />
+                                                <label>Title of thing that need fix<i
+                                                        class="fa fa-briefcase"></i></label>
+                                                <input type="text" placeholder="Example: Replace 300 square foot roof"
+                                                    value="" id="title-input" />
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Category</label>
+                                                        <select data-placeholder="All Categories" id="domain-input"
+                                                            class="chosen-select">
+                                                            <option>Painting</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label>Keywords <i class="fa fa-key"></i></label>
+                                                        <input type="text" id="keywords-input"
+                                                            placeholder="Example: Metal Roofing Repair" value="" />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
 
-                                    <div class="profile-edit-container add-list-container">
+                                        <div class="profile-edit-container add-list-container">
                                             <div class="profile-edit-header fl-wrap">
                                                 <h4>Location</h4>
                                             </div>
                                             <div class="custom-form">
-                                                <label>Address<i class="fa fa-map-marker"></i></label>
-                                                <input type="text" placeholder="What is your address" value="" />
-    
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <label>City<i class="fa fa-key"></i></label>
-                                                        <input type="text" placeholder="Example: Pittsburgh" value="" />
-    
+                                                        <label>Address<i class="fa fa-map-marker"></i></label>
+                                                        <input type="text" id="address-input"
+                                                            placeholder="What is your address" value="" />
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label>State <i class="fa fa-key"></i></label>
-                                                        <input type="text" placeholder="Example: Pennsylvania" value="" />
+                                                        <label>Zip Code<i class="fa fa-map-marker"></i></label>
+                                                        <input type="text" id="zipcode-input"
+                                                            placeholder="What is your Zipcode" value="" />
                                                     </div>
                                                 </div>
-    
-                                                <!-- <label>Phone<i class="fa fa-phone"></i></label>
-                                                <input type="text" placeholder="Your Phone" value="" />
-                                                <label>Email<i class="fa fa-envelope-o"></i></label>
-                                                <input type="text" placeholder="Your Email" value="" />-->
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>City<i class="fa fa-map-marker"></i></label>
+                                                        <input type="text" id="city-input"
+                                                            placeholder="Example: Pittsburgh" value="" />
+
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>State <i class="fa fa-map-marker"></i></label>
+                                                        <input type="text" id="state-input"
+                                                            placeholder="Example: Pennsylvania" value="" />
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 
                                         <div class="profile-edit-container add-list-container">
-                                                <div class="profile-edit-header fl-wrap">
-                                                    <h4>Detailed Information</h4>
-                                                </div>
-                                                <div class="custom-form">
-                                                    <label>Description</label>
-                                                    <textarea cols="40" rows="3" placeholder="Explain in details what your problem is or what your getting installed"></textarea>
-        
-                                                </div>
+                                            <div class="profile-edit-header fl-wrap">
+                                                <h4>Detailed Information</h4>
                                             </div>
-
-                                    <div class="profile-edit-container  add-list-container">
-                                        <div class="profile-edit-header fl-wrap">
-                                            <h4>Upload Photos</h4>
-                                        </div>
-                                        <div class="custom-form">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="act-widget fl-wrap">
-                                                        <form class="fuzone">
-                                                            <div class="fu-text">
-                                                                <span><i class="fa fa-picture-o"></i> Click here
-                                                                    or
-                                                                    drop files to upload</span>
-                                                            </div>
-                                                            <input type="file" class="upload">
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="add-list-media-wrap">
-                                                        <form class="fuzone">
-                                                            <div class="fu-text">
-                                                                <span><i class="fa fa-picture-o"></i> Click here
-                                                                    or
-                                                                    drop files to upload</span>
-                                                            </div>
-                                                            <input type="file" class="upload">
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="add-list-media-wrap">
-                                                        <form class="fuzone">
-                                                            <div class="fu-text">
-                                                                <span><i class="fa fa-picture-o"></i> Click here
-                                                                    or
-                                                                    drop files to upload</span>
-                                                            </div>
-                                                            <input type="file" class="upload">
-                                                        </form>
-                                                    </div>
-                                                </div>
+                                            <div class="custom-form">
+                                                <label>Description</label>
+                                                <textarea cols="40" rows="3" id="description-input"
+                                                    placeholder="Explain in details what your problem is or what your getting installed"></textarea>
 
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="submit-button">
-                                        <a href="#" class="log-out-btn">Submit</a>
+
+                                        <div class="profile-edit-container  add-list-container">
+                                            <div class="profile-edit-header fl-wrap">
+                                                <h4>Upload Photos</h4>
+                                            </div>
+                                            <div class="custom-form">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="add-list-media-wrap">
+                                                            <label>First image</label>
+
+                                                            <div class="fuzone">
+                                                                <img src="images/upload-image.png" id="previewImage1"
+                                                                    style="width:100%; min-height:150px;" alt="">
+                                                                <input type="file"
+                                                                    accept="image/x-png,image/gif,image/jpeg"
+                                                                    class="upload " onChange="showImage(event,1)">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-4">
+                                                        <div class="add-list-media-wrap">
+                                                            <label>Second image</label>
+
+                                                            <div class="fuzone">
+                                                                <img src="images/upload-image.png" id="previewImage2"
+                                                                    style="width:100%; min-height:150px;" alt="">
+                                                                <input type="file"
+                                                                    accept="image/x-png,image/gif,image/jpeg"
+                                                                    class="upload" onChange="showImage(event, 2)"
+                                                                    class="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="add-list-media-wrap">
+                                                            <label>Third image</label>
+
+                                                            <div class="fuzone">
+                                                                <img src="images/upload-image.png" id="previewImage3"
+                                                                    style="width:100%; min-height:150px;" alt="">
+                                                                <input type="file"
+                                                                    accept="image/x-png,image/gif,image/jpeg"
+                                                                    class="upload" onChange="showImage(event, 3)">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="add-list-media-wrap">
+                                                            <label>Forth image</label>
+
+                                                            <div class="fuzone">
+
+                                                                <img src="images/upload-image.png" id="previewImage4"
+                                                                    style="width:100%; min-height:150px;" alt="">
+                                                                <input type="file"
+                                                                    accept="image/x-png,image/gif,image/jpeg"
+                                                                    class="imageValue" onChange="showImage(event,4)"
+                                                                    class="upload">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                 
+
+                                                </div>
+                                                
+                                                <button onclick="OwnerProjectPOST()" type="submit" class="btn  big-btn  color-bg flat-btn">Submit<i
+                                                        class="fa fa-angle-right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
 
                                 </div>
-                            </div>
-                            <!--profile-edit-wrap end -->
-                        </div>
-                        <!--container end -->
-                </section>
-                <!-- section end -->
-                <div class="limit-box fl-wrap"></div>
-                <!--section -->
-                <section class="gradient-bg">
-                    <div class="cirle-bg">
-                        <div class="bg" data-bg="images/bg/circle.png"></div>
-                    </div>
-                    <div class="container">
-                        <div class="join-wrap fl-wrap">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <h3>Do You Have Questions ?</h3>
-                                    <p>Lorem ipsum dolor sit amet, harum dolor nec in, usu molestiae at no.</p>
-                                </div>
-                                <div class="col-md-4"><a href="contacts.html" class="join-wrap-btn">Get In Touch <i
-                                            class="fa fa-envelope-o"></i></a></div>
+
                             </div>
                         </div>
-                    </div>
-                </section>
-                <!-- section end -->
+                        <!--profile-edit-wrap end -->
+                    </section>
+                </form>
+
+
+
             </div>
+            <!--container end -->
+            <!-- section end -->
+            <div class="limit-box fl-wrap"></div>
+            <!--section -->
+            <section class="gradient-bg">
+                <div class="cirle-bg">
+                    <div class="bg" data-bg="images/bg/circle.png"></div>
+                </div>
+                <div class="container">
+                    <div class="join-wrap fl-wrap">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h3>Do You Have Questions ?</h3>
+                                <p>Lorem ipsum dolor sit amet, harum dolor nec in, usu molestiae at no.</p>
+                            </div>
+                            <div class="col-md-4"><a href="contacts.html" class="join-wrap-btn">Get In Touch <i
+                                        class="fa fa-envelope-o"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section end -->
         </div>
         <!-- wrapper end -->
         <!--footer -->
@@ -456,7 +475,105 @@
     <script type="text/javascript" src="js/scripts.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEYHERE&libraries=places&callback=initAutocomplete">
     </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script type="text/javascript" src="js/map-add.js"></script>
 </body>
 
 </html>
+<script type="text/javascript">
+    //// decode jwt
+    // var token = document.cookie.match('OwnerJWT').input;
+    // var base64Url = token.split('.')[1];
+    // var userData = JSON.parse(window.atob(base64Url)).custom;
+    // var userData ="b7a79cf2407581f1802338341cc6112d";
+    window.addEventListener('DOMContentLoaded', (event) => {
+        // console.log(userData);
+
+
+    });
+
+
+
+
+
+    function showImage(event, id) {
+        var input = event.target;
+        var reader = new FileReader();
+        reader.onload = function () {
+            var dataURL = reader.result;
+            var output = document.getElementById('previewImage' + id);
+            output.src = dataURL;
+        };
+        reader.readAsDataURL(input.files[0]);
+
+    };
+
+
+
+
+
+
+    function OwnerProjectPOST() {
+        var title = document.getElementById('title-input');
+        var keywords = document.getElementById('keywords-input');
+        var domain = document.getElementById('domain-input');
+        var description = document.getElementById('description-input');
+        var address = document.getElementById('address-input');
+        var zipcode = document.getElementById('zipcode-input');
+        var city = document.getElementById('city-input');
+        var state = document.getElementById('state-input');
+        var photo1 = document.getElementById('previewImage1').src;
+        var photo2 = document.getElementById('previewImage2').src;
+        var photo3 = document.getElementById('previewImage3').src;
+        var photo4 = document.getElementById('previewImage4').src;
+ 
+
+        var ProjectRequest = {
+            PublicId: '1e1c5270402fcd4480136c3b35e032ae',
+            Title: title.value,
+            Keywords: keywords.value,
+            Domain: domain.value,
+            Description: description.value,
+            Address: address.value,
+            City: city.value,
+            State: state.value,
+            Zipcode: zipcode.value,
+            ProjectPhoto1: photo1,
+            ProjectPhoto2: photo2,
+            ProjectPhoto3: photo3,
+            ProjectPhoto4: photo4,
+      
+        };
+
+
+        // post request
+        axios({
+            method: "POST",
+            "url": "http://localhost:3000",
+            "data": ProjectRequest,
+            "headers": {
+                "content-type": "application/json"
+            }
+
+            // server response 
+        }).then(function (response) {
+
+            // info was not submitted error
+            console.log(response.data);
+
+            // if (response.data == "Success") {
+            //     alert("it worked" + response.data);
+            //     return false;
+
+            // } else {
+            //     console.log("Failed  " + response.data)
+            //     return false;
+
+            // }
+            return false;
+
+        });
+
+    }
+</script>

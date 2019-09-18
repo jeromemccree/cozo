@@ -34,23 +34,7 @@
                 <div class="logo-holder">
                     <a href="index.html"><img src="images/logo.png" alt=""></a>
                 </div>
-                <div class="header-search vis-header-search">
-                    <div class="header-search-input-item">
-                        <input type="text" placeholder="Keywords" value="" />
-                    </div>
-                    <div class="header-search-select-item">
-                            <select data-placeholder="All Categories" class="chosen-select">
-                                    <option>Pumbling</option>
-                                    <option>Roofing</option>
-                                    <option>Electrical</option>
-                                    <option>Heating/AC</option>
-                                    <option>Carpenter</option>
-                                    <option>Plumber</option>
-                                    <option>House cleaning</option>
-                                </select>
-                    </div>
-                    <button class="header-search-button" onclick="window.location.href='listing.html'">Search</button>
-                </div>
+                
                 <div class="show-search-button"><i class="fa fa-search"></i> <span>Search</span></div>
                 <a href="dashboard-add-listing.html" class="add-list">Add Listing <span><i
                             class="fa fa-plus"></i></span></a>
@@ -81,34 +65,26 @@
                                 <h2>Find a handyman in your area</h2>
                                 <h3>New Project System to protect you</h3>
                             </div>
-
                             <form onsubmit="return ContractorProfileSearch()" method="POST" name="submitForm"
                                 class="main-search-input-wrap" action="searched.html">
                                 <div class="main-search-input fl-wrap">
                                     <div class="main-search-input-item">
-                                        <input id="title_input" type="text" placeholder="What are you looking for?"
-                                            value="" />
-                                    </div>
-
-                                    <div class="main-search-input-item location" id="autocolete-container">
-                                        <input id="zipcode_input" type="number" name="zipcode" placeholder="Zip Code"
-                                            id="autocmplete-input" value="" />
-                                        <a href="#"><i class="fa fa-dot-circle-o"></i></a>
-                                    </div>
-
-                                    <div class="main-search-input-item">
                                         <select data-placeholder="All Categories" id="domain_input"
                                             class="chosen-select">
                                             <option>All Categories</option>
-                                            <option>plumber</option>
+                                            <option>Plumbing</option>
                                             <option>Roofing</option>
                                             <option>Electrical</option>
                                             <option>Heating/AC</option>
                                             <option>Carpenter</option>
-                                            <option>Plumber</option>
                                             <option>House cleaning</option>
                                         </select>
                                     </div>
+                                    <div class="main-search-input-item location" id="autocolete-container">
+                                            <input id="zipcode_input" type="number" name="zipcode" placeholder="Zip Code"
+                                                id="autocmplete-input" value="" />
+                                            <a href="#"><i class="fa fa-dot-circle-o"></i></a>
+                                        </div>
                                     <button class="main-search-button" type="submit">Search</button>
                                 </div>
                             </form>

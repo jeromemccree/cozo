@@ -148,7 +148,7 @@
             <div class="content">
                 <!--section -->
                 <form onsubmit="return ContractorProfilePOST()" method="post" name="authenticationform"
-                    action="../contractor/index.html">
+                    action="../contractor/dashboard.html">
                     <section id="sec1">
                         <!-- container -->
                         <div class="container">
@@ -186,7 +186,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label>Name of Company<i class="fa fa-briefcase"></i></label>
-                                                        <input type="text" id="biography-input"
+                                                        <input type="text" id="-input"
                                                             placeholder="Dont have one? Use Your Name" value="" />
 
                                                     </div>
@@ -226,7 +226,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label>State <i class="fa fa-key"></i></label>
-                                                        <input type="text" id="state-sinput"
+                                                        <input type="text" id="state-input"
                                                             placeholder="Example: Pennsylvania" value="" />
                                                     </div>
                                                 </div>
@@ -254,35 +254,20 @@
                                             <div class="custom-form">
                                                 <div class="row">
                                                     <div class="add-list-media-wrap">
-                                                        <form class="fuzone">
-                                                            <div class="fu-text">
-                                                                <img src="" class="background-image-preview" alt="">
-
-                                                                <div class="fileUpload" style=" visibility:visible">
-                                                                    <span><i class="fa fa-picture-o"></i> Click here
-                                                                        or drop files to upload</span></div>
+                                                        <div class="add-list-media-wrap">
+                                                            <div class="fuzone">
+                                                                <img src="images/upload-image.png" id="previewImage1"
+                                                                    style="width:100%; min-height:150px;" alt="">
+                                                                <input type="file"
+                                                                    accept="image/x-png,image/gif,image/jpeg"
+                                                                    class="upload" onChange="showImage(event, 1)">
                                                             </div>
-                                                            <input type="file" id="backgroundImage-input"
-                                                                accept="image/x-png,image/gif,image/jpeg"
-                                                                onchange="preview_background_image(event)"
-                                                                class="upload" value="">
-                                                        </form>
-                                                    </div>
+                                                        </div>
 
+
+
+                                                    </div>
                                                 </div>
-                                                <script type='text/javascript'>
-                                                    function preview_background_image(event) {
-                                                        var reader = new FileReader();
-                                                        reader.onload = function () {
-                                                            var output = document.getElementsByClassName(
-                                                                'background-image-preview')[0];
-                                                            document.getElementsByClassName('fileUpload')[0].style
-                                                                .visibility = "hidden";;
-                                                            output.src = reader.result;
-                                                        }
-                                                        reader.readAsDataURL(event.target.files[0]);
-                                                    }
-                                                </script>
                                             </div>
                                         </div>
 
@@ -292,59 +277,57 @@
                                                 <h4>Socials</h4>
                                             </div>
                                             <div class="custom-form">
-                                                <label>Facebook <i class="fa fa-facebook"></i></label>
-                                                <input type="text" id="facebook-input"
-                                                    placeholder="https://www.facebook.com/" value="" />
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Facebook <i class="fa fa-facebook"></i></label>
+                                                        <input type="text" id="facebook-input"
+                                                            placeholder="https://www.facebook.com/" value="" />
+                                                    </div>
 
-                                                <label> LinkedIn <i class="fa fa-linkedin"></i> </label>
-                                                <input type="text" id="linkedin-input"
-                                                    placeholder="https://www.linkedin.com" value="" />
+                                                    <div class="col-md-6">
+                                                        <label> LinkedIn <i class="fa fa-linkedin"></i> </label>
+                                                        <input type="text" id="linkedin-input"
+                                                            placeholder="https://www.linkedin.com" value="" />
 
-                                                <label>Twitter<i class="fa fa-twitter"></i> </label>
-                                                <input type="text" id="twitter-input" placeholder="https://twitter.com/"
-                                                    value="" />
+                                                    </div>
+                                                </div>
 
-                                                <label>Instagram<i class="fa fa-instagram"></i> </label>
-                                                <input type="text" id="instagram-input"
-                                                    placeholder="https://instagram.com/" value="" />
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Twitter<i class="fa fa-twitter"></i></label>
+                                                        <input type="text" id="twitter-input"
+                                                            placeholder="https://twitter.com/" value="" />
+                                                    </div>
+
+                                                    <div class="col-md-6">
+
+                                                        <label>Instagram<i class="fa fa-instagram"></i> </label>
+                                                        <input type="text" id="instagram-input"
+                                                            placeholder="https://instagram.com/" value="" />
+                                                    </div>
+                                                </div>
+
+                                                <label>Your Website <i class="fa fa-link"></i></label>
+                                                <input type="text" id="url-input"
+                                                    placeholder="https://www.mywebsite.com/" value="" />
 
                                                 <button type="submit" class="btn  big-btn  color-bg flat-btn">Submit<i
                                                         class="fa fa-angle-right"></i></button>
                                             </div>
                                         </div>
-
-
                                         <!-- profile-edit-container end-->
                                     </div>
-
-                                    <div class="col-md-2">
-                                        <div class="edit-profile-photo fl-wrap">
-                                            <img src="images/avatar/1.jpg" class="respimg" alt="">
-
-                                            <div class="change-photo-btn">
-                                                <div class="photoUpload">
-                                                    <span><i class="fa fa-upload"></i> Upload Photo</span>
-                                                    <input type="file" accept="image/x-png,image/gif,image/jpeg"
-                                                        onchange="preview_image(event)" class="upload" value="">
-
-                                                </div>
+                                    <!-- use this as class == user-profile-avatar -->
+                                    <div class="col-md-2 ">
+                                        <div class="user-profile-avatar">
+                                            <div class="fuzone">
+                                                <img src="images/avatar/1.jpg" alt="" id="previewImage2">
+                                                <input type="file" accept="image/x-png,image/gif,image/jpeg"
+                                                    onChange="showImage(event,2)" class="upload">
                                             </div>
                                         </div>
                                     </div>
 
-
-
-
-                                    <script type='text/javascript'>
-                                        function preview_image(event) {
-                                            var reader = new FileReader();
-                                            reader.onload = function () {
-                                                var output = document.getElementsByClassName('respimg')[0];
-                                                output.src = reader.result;
-                                            }
-                                            reader.readAsDataURL(event.target.files[0]);
-                                        }
-                                    </script>
                                 </div>
 
                             </div>
@@ -507,23 +490,37 @@
     <script type="text/javascript" src="js/scripts.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEYHERE&libraries=places&callback=initAutocomplete">
     </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script type="text/javascript" src="js/map-add.js"></script>
 </body>
 
 </html>
 <script type="text/javascript">
+    // decode jwt
+    var token = document.cookie.match('ContractorJWT').input;
+    var base64Url = token.split('.')[1];
+    var userData = JSON.parse(window.atob(base64Url)).custom;
+
+
     window.addEventListener('DOMContentLoaded', (event) => {
-        // decode jwt
-        var token = document.cookie.match('ContractorJWT').input;
-        var base64Url = token.split('.')[1];
-        var userData = JSON.parse(window.atob(base64Url)).custom;
-        return userData;
-    });
 
-    function ContractorProfilePOST(userData) {
-        // document.cookie = "cookiename=cookievalue; expires= Thu, 21 Aug 2014 20:00:00 UTC";
-        console.log(userData.publicid);
 
+    })
+
+    function showImage(event, id) {
+        var input = event.target;
+        var reader = new FileReader();
+        reader.onload = function () {
+            var dataURL = reader.result;
+            var output = document.getElementById('previewImage' + id);
+            output.src = dataURL;
+        };
+        reader.readAsDataURL(input.files[0]);
+
+    };
+
+    function ContractorProfilePOST() {
         var title = document.getElementById("title-input");
         var domain = document.getElementById("domain-input");
         var phone = document.getElementById("phone-input");
@@ -532,28 +529,39 @@
         var city = document.getElementById("city-input");
         var state = document.getElementById("state-input");
         var bio = document.getElementById("biography-input");
-        var background = document.getElementById("backgroundImage-input");
+        var url = document.getElementById("url-input");
+        var backgroundPhoto = document.getElementById("previewImage1");
+        var profilePhoto = document.getElementById("previewImage2");
         var facebook = document.getElementById("facebook-input");
         var linkedin = document.getElementById("linkedin-input");
         var twitter = document.getElementById("twitter-input");
         var instagram = document.getElementById("instagram-input");
 
+        alert("worked 1")
+
+        debugger;
+
+        
         var userInfo = {
-            publicId: userData.publicid,
-            title: title.value,
-            domain: domain.value,
-            phone: phone.value,
-            address: address.value,
-            zipcode: zipcode.value,
-            city: city.value,
-            state: state.value,
-            bio: bio.value,
-            facebook: facebook.value,
-            linkedin: linkedin.value,
-            twitter: twitter.value,
-            instagram: instagram.value
+            PublicId: userData.publicId,
+            Title: title.value,
+            Domain: domain.value,
+            Bio: bio.value,
+            Phone: phone.value,
+            Address: address.value,
+            City: city.value,
+            State: state.value,
+            Zipcode: zipcode.value,
+            Url: url.value,
+            ProfilePhoto: profilePhoto.src,
+            BackgroundPhoto: backgroundPhoto.src,
+            FacebookHandle: facebook.value,
+            TwitterHandle: twitter.value,
+            InstagramHandle: instagram.value,
+            LinkedinHandle: linkedin.value
+
         };
-        alert(userInfo);
+        console.log(userInfo);
 
         // post request
         axios({
@@ -566,19 +574,30 @@
 
             // server response 
         }).then(function (response) {
-            // info was not submitted error
-            if (response.data == "Sorry please enter info") {
+            alert("worked 2")
+
+            debugger;
+            if (response.data == "Sorry contractor aleady Exist") {
+
+                alert("Sorry you already have a profile");
                 return false;
 
-                // jwt storing 
+            } else if (response.data == "an error occurred, please try again later" || response.data ==
+                "invalid request - all request data not present") {
+
+                alert("Sorry An error has occured, pleaser try again later");
+                return false;
+
             } else {
-                alert(response.data)
-                return false;
-
+                document.cookie = "ContractorJWT=" + response.data;
+                return true;
             }
+
         });
 
         return false;
+
+
 
     }
 </script>

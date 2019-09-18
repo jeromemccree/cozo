@@ -1577,6 +1577,7 @@ section.gray-section .section-separator {
 	margin-top:15px;
 	font-weight:500;
 	border-top:1px solid #eee;
+	background: #fff;
 }
 .card-listing .geodir-category-location  a {
 	color: #999;

@@ -929,7 +929,6 @@ function OwnerAuthPOST() {
 
 // registration 
 function OwnerRegisterPOST() {
-    // document.cookie = "cookiename=cookievalue; expires= Thu, 21 Aug 2014 20:00:00 UTC";
 
     var firstname = document.getElementById("firstname");
     var lastname = document.getElementById("lastname");
@@ -993,7 +992,7 @@ function OwnerRegisterPOST() {
 
             // jwt storing 
         } else {
-            document.cookie = "name=ContractorJwt; path=/; value=" + response.data; 
+            document.cookie = "OwnerJWT=" + response.data;
             return true;
 
         }
@@ -1004,16 +1003,13 @@ function OwnerRegisterPOST() {
 }
 
 function ContractorProfileSearch() {
-    var title = document.getElementById("title_input");
     var zipcode = document.getElementById("zipcode_input");
     var domain = document.getElementById("domain_input");
 
     var searchInfo = {
-        title: '%' + title.value + '%',
-        zipcode: zipcode.value.match(/^\d\d\d/) + '%',
-        domain: domain.value
+        domain: domain.value,
+        zipcode: zipcode.value.match(/^\d\d\d/) + '%'
     };
-
     axios({
         method: "POST",
         "url": "http://localhost:3000",

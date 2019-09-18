@@ -929,29 +929,22 @@ function validateAuth() {
 function validateRegister() {
     // document.cookie = "cookiename=cookievalue; expires= Thu, 21 Aug 2014 20:00:00 UTC";
 
-    var firstname = document.getElementById("firstname");
-    var lastname = document.getElementById("lastname");
+    var name = document.getElementById("name");
     var email = document.getElementById("email2");
     var password = document.getElementById("password2");
 
     var userInfo = {
-        firstname: firstname.value,
-        lastname: lastname.value,
+        name: name.value,
         email: email.value,
         password: password.value
     };
 
-    // firstname error check
-    if (firstname.value.trim() == "" || firstname.value.trim().length < 2 || firstname.value.trim().length > 25) {
-        firstname.style.border = "solid 1px red";
-        document.getElementById("invalidFirstname").style.visibility = "visible";
+    // name error check
+    if (name.value.trim() == "" || name.value.trim().length < 2 || name.value.trim().length > 25) {
+        name.style.border = "solid 1px red";
+        document.getElementById("invalidname").style.visibility = "visible";
         return false;
 
-        // lastname error check
-    } else if (lastname.value.trim() == "" || lastname.value.trim().length < 2 || lastname.value.trim().length > 25) {
-        lastname.style.border = "solid 1px red";
-        document.getElementById("invalidLastname").style.visibility = "visible";
-        return false;
 
         // email error check
     } else if (email.value.trim() == "" || !email.value.match(emailformat) || email.value.trim().length > 75) {
@@ -1011,3 +1004,4 @@ function validateRegister() {
 // then values will be posted on next page 
 // values will be looped thorugh 
 // on click the values on the page will be sent to the next page to be further exaimed
+
