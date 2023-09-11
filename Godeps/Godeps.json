@@ -1,0 +1,57 @@
+{
+	"ImportPath": "backend",
+	"GoVersion": "go1.12",
+	"GodepVersion": "v80",
+	"Deps": [
+		{
+			"ImportPath": "github.com/dgrijalva/jwt-go",
+			"Comment": "v3.2.0-4-g3af4c74",
+			"Rev": "3af4c746e1c248ee8491a3e0c6f7a9cd831e95f8"
+		},
+		{
+			"ImportPath": "github.com/gorilla/context",
+			"Comment": ".1.1",
+			"Rev": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42"
+		},
+		{
+			"ImportPath": "github.com/joho/godotenv",
+			"Comment": ".2.0-12-g1709ab1",
+			"Rev": "1709ab122c988931ad53508747b3c061400c2984"
+		},
+		{
+			"ImportPath": "github.com/julienschmidt/httprouter",
+			"Comment": ".1-64-g348b672",
+			"Rev": "348b672cd90d8190f8240323e372ecd1e66b59dc"
+		},
+		{
+			"ImportPath": "github.com/justinas/alice",
+			"Rev": "03f45bd4b7dad4734bc4620e46a35789349abb20"
+		},
+		{
+			"ImportPath": "github.com/lib/pq",
+			"Comment": "go1.0-cutoff-203-g88edab0",
+			"Rev": "88edab0803230a3898347e77b474f8c1820a1f20"
+		},
+		{
+			"ImportPath": "github.com/lib/pq/oid",
+			"Comment": "go1.0-cutoff-203-g88edab0",
+			"Rev": "88edab0803230a3898347e77b474f8c1820a1f20"
+		},
+		{
+			"ImportPath": "github.com/michaelbironneau/garbler/lib",
+			"Rev": "eaea49f3709333a999768eddd70d24eba599e78d"
+		},
+		{
+			"ImportPath": "github.com/zemirco/email",
+			"Rev": "19f866b42f3ec3489abaf812ca254b62d8d2ff61"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/bcrypt",
+			"Rev": "49796115aa4b964c318aad4f3084fdb41e9aa067"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/blowfish",
+			"Rev": "49796115aa4b964c318aad4f3084fdb41e9aa067"
+		}
+	]
+}

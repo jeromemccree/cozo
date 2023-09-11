@@ -1,0 +1,30 @@
+{
+    "PostgreSQL": {
+        "Username": "brdivdicwtujaj",
+        "Password": "2334de3e6cbd50bcc20e16fa2667dcc786f96f8fa3ed816edc3832f45449d1c3",
+        "Name": "defjotmbve8og9",
+        "Host": "ec2-54-83-197-230.compute-1.amazonaws.com",
+        "Port": "5432",
+        "SSLMode": "require"
+    },
+    "Server": {
+        "Hostname": "127.0.0.1",
+        "UseHTTP": true,
+        "UseHTTPS": false,
+        "HTTPPort": 4000,
+        "HTTPSPort": 443,
+        "CertFile": "tls/server.crt",
+        "KeyFile": "tls/server.key"
+    },
+    "Session": {
+        "SecretKey": "@r4B?EThaSEh_drujR7P_hub=s#s2Pah",
+        "Name": "ipfindr",
+        "Options": {
+            "Path": "/",
+            "Domain": "127.0.0.1",
+            "MaxAge": 28800,
+            "Secure": false,
+            "HttpOnly": true
+        }
+    }
+}
